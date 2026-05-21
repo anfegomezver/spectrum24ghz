@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Red -->
+    <color name="ufpso_red">#C0001A</color>
+    <color name="ufpso_red_dark">#8B0000</color>
+    <color name="ufpso_red_medium">#D32F2F</color>
+    <color name="ufpso_red_light">#FFCDD2</color>
+    <color name="ufpso_red_tint">#FFF0F0</color>
+
+    <!-- Fondos -->
+    <color name="bg_main">#F7F7F7</color>
+    <color name="bg_surface">#FFFFFF</color>
+    <color name="bg_status_bar">#FFEBEE</color>
+
+    <!-- Texto -->
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_dim">#BDBDBD</color>
+    <color name="text_on_red">#FFFFFF</color>
+
+    <!-- Badges de canal -->
+    <color name="badge_prime">#C0001A</color> <!-- Canales 1, 6, 11 — rojo -->
+    <color name="badge_normal">#D32F2F</color> <!-- Canales regulares -->
+    <color name="badge_restricted">#9E9E9E</color> <!-- Canales 12-14 -->
+
+    <!-- Barra de congestión -->
+    <color name="bar_empty">#E0E0E0</color>
+    <color name="bar_low">#388E3C</color>
+    <color name="bar_medium">#F57C00</color>
+    <color name="bar_high">#C62828</color>
+
+    <!-- Señal individual -->
+    <color name="sig_strong">#2E7D32</color>
+    <color name="sig_good">#558B2F</color>
+    <color name="sig_medium">#E65100</color>
+    <color name="sig_weak">#B71C1C</color>
+
+    <!-- Misc -->
+    <color name="divider">#EEEEEE</color>
+    <color name="card_stroke">#FFE0E0</color>
+
+    <!-- Requeridos por MaterialComponents -->
+    <color name="colorPrimary">#C0001A</color>
+    <color name="colorPrimaryVariant">#8B0000</color>
+    <color name="colorSecondary">#D32F2F</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#1A1A1A</color>
+    <color name="colorError">#B00020</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorBackground">#F7F7F7</color>
+    <color name="colorOnBackground">#1A1A1A</color>
+
+</resources>

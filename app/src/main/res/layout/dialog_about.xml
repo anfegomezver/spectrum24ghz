@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Encabezado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingBottom="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SPECTRUM 2.4"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/ufpso_red"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_university"
+                android:textSize="11sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/ufpso_red_light"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Materia -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_subject_label"
+            android:textSize="9sp"
+            android:textColor="@color/ufpso_red"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_subject"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Docente -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_teacher_label"
+            android:textSize="9sp"
+            android:textColor="@color/ufpso_red"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_teacher"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Integrantes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_members_label"
+            android:textSize="9sp"
+            android:textColor="@color/ufpso_red"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/team_members"
+            android:textSize="11.5sp"
+            android:textColor="@color/text_primary"
+            android:lineSpacingExtra="5dp"
+            android:fontFamily="monospace" />
+
+    </LinearLayout>
+
+</ScrollView>
