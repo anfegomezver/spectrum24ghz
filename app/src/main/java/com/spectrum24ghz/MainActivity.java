@@ -137,11 +137,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startScanFlow() {
-        if (isAirplaneModeOn()) {
-            showStatus("Modo avión activo — no es posible escanear");
-            return;
-        }
-
         long elapsed = SystemClock.elapsedRealtime() - lastScanStartMs;
         if (lastScanStartMs > 0 && elapsed < SCAN_COOLDOWN_MS) {
             countdownHandler.removeCallbacks(countdownTick);
@@ -276,10 +271,6 @@ public class MainActivity extends AppCompatActivity {
             try { unregisterReceiver(scanReceiver); } catch (IllegalArgumentException ignored) {}
             receiverRegistered = false;
         }
-    }
-
-    private boolean isAirplaneModeOn() {
-        return Settings.Global.getInt(getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, 0) == 1;
     }
 
     private Integer frecuenciaACanal(int freq) {
