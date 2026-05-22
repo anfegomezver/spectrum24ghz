@@ -22,19 +22,19 @@ Esto compilará un APK y lo guardará en `app/build/outputs/apk/debug/app-debug.
 
 Este projecto fue hecho por estudiantes de la [Universidad Francisco de Paula Santander Ocaña](https://ufpso.edu.co/).
 
-Las siguientes personas participaron en el proyecto:
+Las siguientes personas participaron en el proyecto (ordenados por código de forma ascendente):
 
- - **0192155:** Anderson Lizarazo Tellez.
- - **0192295:** Andrey Castilla Contreras.
- - **0192250:** Andrés Felipe Gómez Verjel.
- - **0192108:** Angel Andrés Boada Salazar.
- - **0192324:** Arley Santiago Quintero.
- - **0192106:** Darwin Jhosett Bermúdez Romero.
- - **0192041:** Jairo Alonso Ramos Méndez.
- - **0192163:** Javier Quintero.
  - **0192007:** Luisa Fernanda Acosta Vergel.
+ - **0192019:** Stefanny Ximena Páez Bayona.
+ - **0192041:** Jairo Alonso Ramos Méndez.
+ - **0192092:** Paula Johanna García Rodríguez.
+ - **0192106:** Darwin Jhosett Bermúdez Romero.
+ - **0192108:** Angel Andrés Boada Salazar.
+ - **0192111:** Valentina Prado Sarabia.
  - **0192125:** Maicol Eduardo Robles Salazar.
  - **0192128:** Michell Natalia Cárdenas Jiménez.
- - **0192092:** Paula Johanna García Rodríguez.
- - **0192019:** Stefanny Ximena Páez Bayona.
- - **0192111:** Valentina Prado Sarabia.
+ - **0192155:** Anderson Lizarazo Tellez.
+ - **0192163:** Javier Quintero.
+ - **0192250:** Andrés Felipe Gómez Verjel.
+ - **0192295:** Andrey Castilla Contreras.
+ - **0192324:** Arley Santiago Quintero.
