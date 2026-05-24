@@ -25,6 +25,14 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp">
 
+            <!-- Logo UFPSO -->
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/logoufps"
+                android:contentDescription="Logo UFPSO" />
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -34,24 +42,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"
+                    android:text="Spectrum 2.4"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/text_on_red"
-                    android:fontFamily="monospace"
-                    android:letterSpacing="0.05" />
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.02" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/subtitle"
-                    android:textSize="10sp"
+                    android:text="Analizador de canales IEEE 802.11 · 2.4 GHz"
+                    android:textSize="9.5sp"
                     android:textColor="#FFCDD2"
                     android:layout_marginTop="1dp" />
 
             </LinearLayout>
 
-            <!-- Ícono de información — abre el diálogo de créditos -->
             <ImageButton
                 android:id="@+id/btnAbout"
                 android:layout_width="40dp"
@@ -65,7 +72,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- ─── Contenido ─────────────────────────────────────────────────────── -->
+    <!-- ─── Contenido Principal ────────────────────────────────────────────── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -89,8 +96,9 @@
                 android:layout_width="0dp"
                 android:layout_height="38dp"
                 android:layout_weight="1"
-                android:text="@string/scan"
+                android:text="ESCANEAR"
                 android:textSize="13sp"
+                android:textStyle="bold"
                 app:backgroundTint="@color/ufpso_red" />
 
             <ProgressBar
@@ -103,28 +111,146 @@
 
         </LinearLayout>
 
-        <!-- Estado del escaneo — también informa sobre modo avión -->
+        <!-- Estado del escaneo -->
         <TextView
             android:id="@+id/tvScanStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="14dp"
-            android:paddingVertical="5dp"
-            android:textSize="10sp"
+            android:paddingVertical="6dp"
+            android:textSize="10.5sp"
             android:textColor="@color/text_secondary"
             android:background="@color/bg_status_bar"
-            android:visibility="gone"
-            tools:text="Último escaneo: 14:30:00  ·  7 redes encontradas"
-            tools:visibility="visible" />
+            android:visibility="visible"
+            tools:text="Próximo escaneo en 8s" />
 
-        <!-- Lista de canales -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvChannels"
+        <!-- Contenedor de Vistas Intercambiables -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="6dp"
-            android:clipToPadding="false"
-            tools:listitem="@layout/item_channel" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#FAFAFA">
+
+            <!-- Vista 1: Lista plana de redes -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChannels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:clipToPadding="false"
+                android:visibility="visible"
+                tools:listitem="@layout/item_network" />
+
+            <!-- Vista 2: Lista de canales -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChannelsList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:clipToPadding="false"
+                android:visibility="gone"
+                tools:listitem="@layout/item_channel_list" />
+
+            <!-- Vista 3: Gráfico de tiempo -->
+            <com.spectrum24ghz.TimeGraphView
+                android:id="@+id/timeGraph"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <!-- ─── Barra de Navegación de Pestañas (Estilo Premium) ───────────── -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical">
+
+            <!-- Tab 1: Access Points (Lista) -->
+            <LinearLayout
+                android:id="@+id/tabList"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvTabListText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Puntos Acceso"
+                    android:textSize="11.5sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/ufpso_red" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#F0F0F0" />
+
+            <!-- Tab 2: Channel Graph -->
+            <LinearLayout
+                android:id="@+id/tabChannels"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvTabChannelsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gráfico Canal"
+                    android:textSize="11.5sp"
+                    android:textColor="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#F0F0F0" />
+
+            <!-- Tab 3: Time Graph -->
+            <LinearLayout
+                android:id="@+id/tabTime"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvTabTimeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gráfico Tiempo"
+                    android:textSize="11.5sp"
+                    android:textColor="@color/text_secondary" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
