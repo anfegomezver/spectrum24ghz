@@ -6,48 +6,50 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:paddingVertical="10dp"
-    android:paddingHorizontal="12dp"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="14dp"
     android:background="?attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true">
 
-    <!-- WiFi Signal Icon on the left -->
-    <ImageView
-        android:id="@+id/ivSignalIcon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="12dp"
-        android:src="@drawable/ic_wifi_4"
-        android:contentDescription="Intensidad de Señal"
-        android:tint="@color/sig_strong" />
+    <!-- Badge con número de canal (Usando el badge circular nativo) -->
+    <TextView
+        android:id="@+id/tvChannelBadge"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="@drawable/bg_channel_badge"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="sans-serif-medium"
+        tools:text="6" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginStart="14dp">
 
         <TextView
-            android:id="@+id/tvSsid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:ellipsize="end"
-            android:maxLines="1"
-            tools:text="MiRedWifi" />
-
-        <TextView
-            android:id="@+id/tvBssid"
+            android:id="@+id/tvChannelTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10.5sp"
+            android:textSize="14.5sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            tools:text="Canal 6" />
+
+        <TextView
+            android:id="@+id/tvChannelFreq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
             android:textColor="@color/text_secondary"
             android:fontFamily="monospace"
             android:layout_marginTop="1dp"
-            tools:text="AA:BB:CC:DD:EE:FF" />
+            tools:text="2437 MHz" />
 
     </LinearLayout>
 
@@ -59,23 +61,23 @@
         android:layout_marginStart="12dp">
 
         <TextView
-            android:id="@+id/tvRssi"
+            android:id="@+id/tvChannelNetCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="11.5sp"
+            android:textSize="12sp"
             android:textColor="@color/text_primary"
             android:textStyle="bold"
-            android:fontFamily="monospace"
-            tools:text="-54 dBm" />
+            tools:text="2 redes" />
 
-        <ProgressBar
-            android:id="@+id/progressSignal"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="68dp"
-            android:layout_height="3.5dp"
-            android:layout_marginTop="4dp"
-            android:max="100"
-            android:progressBackgroundTint="@color/divider" />
+        <TextView
+            android:id="@+id/tvChannelSaturation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10.5sp"
+            android:textColor="@color/text_secondary"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            tools:text="Saturación: 20%" />
 
     </LinearLayout>
 
