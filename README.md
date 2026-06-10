@@ -40,6 +40,14 @@ Las siguientes personas participaron en el proyecto (ordenados por código de fo
 
 ---
 
+## 📚 Documentación Técnica
+
+Para más detalles sobre la estructura del proyecto y la guía de desarrollo, consulta los siguientes archivos:
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)**: Descripción técnica de la arquitectura y componentes.
+- **[CONTRIBUTING.md](./CONTRIBUTING.md)**: Guía paso a paso para compilar el proyecto.
+
+---
+
 ## 🚀 Guía de Instalación y Obtención del APK
 
 Existen dos formas principales de obtener e instalar la aplicación en tu dispositivo:
